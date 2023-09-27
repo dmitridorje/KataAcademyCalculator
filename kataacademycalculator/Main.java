@@ -2,7 +2,7 @@ package kataacademycalculator;
 
 import java.util.Scanner;
 
-public class CalculatorDriver {
+public class Main {
     public static void main(String[] args) throws CustomException {
 
         instructions();
@@ -16,12 +16,7 @@ public class CalculatorDriver {
                 break;
             }
 
-            // Выполняем парсинг введенных данных и сохраняем результаты парсинга.
-            String[] arrToCalc = Parser.parseMe(userInput);
-
-            //Отдаем результаты парсинга для проверок и вычислений в объект класса Calculator.
-            Calculator calculator = new Calculator();
-            calculator.getResult(arrToCalc);
+           System.out.println(calc(userInput));
 
             //Ввод нового выражения или выход из программы
             System.out.println("Введите выражение (для выхода введите \"exit\":)");
@@ -34,5 +29,15 @@ public class CalculatorDriver {
         System.out.println("В качестве оператора могут быть использованы символы \"+\", \"-\", \"*\" или \"/\", \n"
                 + "представляющие операции сложения, вычитания, умножения или деления соответственно.");
         System.out.println("Введите выражение (для выхода введите \"exit\":)");
+    }
+    
+    public static String calc(String input) throws CustomException {
+
+        // Выполняем парсинг введенных данных и сохраняем результаты парсинга.
+        String[] arrToCalc = Parser.parseMe(input);
+
+        //Отдаем результаты парсинга для проверок и вычислений в объект класса Calculator.
+        Calculator calculator = new Calculator();
+        return calculator.getResult(arrToCalc);
     }
 }
