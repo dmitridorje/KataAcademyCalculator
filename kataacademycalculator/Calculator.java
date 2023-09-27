@@ -8,12 +8,12 @@ class Calculator {
     String operator;
     boolean romanAnswerRequired = false;
 
-    void getResult(String[] strArr) throws CustomException {
+    String getResult(String[] strArr) throws CustomException {
         int res = solve(strArr);
         if (res < 101) {
-            System.out.println(res);
+            return Integer.toString(res);
         } else {
-            System.out.println(RomeAndArabia.convertToRoman(res - 100500));
+            return (RomeAndArabia.convertToRoman(res - 100500));
         }
     }
 
