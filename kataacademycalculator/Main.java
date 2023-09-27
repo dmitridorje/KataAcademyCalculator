@@ -16,7 +16,7 @@ public class Main {
                 break;
             }
 
-           System.out.println(calc(userInput));
+            System.out.println(calc(userInput));
 
             //Ввод нового выражения или выход из программы
             System.out.println("Введите выражение (для выхода введите \"exit\":)");
@@ -30,7 +30,7 @@ public class Main {
                 + "представляющие операции сложения, вычитания, умножения или деления соответственно.");
         System.out.println("Введите выражение (для выхода введите \"exit\":)");
     }
-    
+
     public static String calc(String input) throws CustomException {
 
         // Выполняем парсинг введенных данных и сохраняем результаты парсинга.
